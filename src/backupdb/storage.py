@@ -13,3 +13,13 @@ def s3(client, infile, bucket, name):
     name: The name of the file we'd like to create in our S3 bucket.
     """
     client.upload_fileobj(infile, bucket, name)
+
+
+    """(pgbackup) $ echo "UPLOADED" > example.txt
+    (pgbackup) $ PYTHONPATH=./src python
+    >>> import boto3
+    >>> from pgbackup import storage
+    >>> client = boto3.client('s3')
+    >>> infile = open('example.txt', 'rb')
+    >>> storage.s3(client, infile, 'backupdb-bucket', infile.name)
+    """
