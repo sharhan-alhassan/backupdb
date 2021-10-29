@@ -132,3 +132,5 @@ dmypy.json
 .howto.md 
 db_setup.sh
 docs
+local-dump.sql
+

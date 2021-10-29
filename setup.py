@@ -13,4 +13,11 @@ setup (
     long_description_content_type='text/markdown',
     url='https://github.com/sharhan-alhassan/backupdb',
     packages=find_packages('src'),
+    package_dir={'': 'src'},
+    install_requires=['boto3'],
+    entry_points={
+        'console_scripts': [
+            'backupdb=backupdb.cli:main',
+        ],
+    }
 )

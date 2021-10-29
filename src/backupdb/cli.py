@@ -1,8 +1,9 @@
 
 from argparse import Action, ArgumentParser
+from os import pardir
 
 
-def DriverAction(Action):
+class DriverAction(Action):
     """
     Namespace is a class that stores the arguments passed in the CLI.
     collect driver & destination from values and store them in the namespace
@@ -21,7 +22,7 @@ def create_parser():
     )
     parser.add_argument(
         "url", 
-        help="URL of the database to backup"
+        help="URL of the database you want to perform the backup"
     )
     parser.add_argument(
         "--driver",
@@ -32,3 +33,20 @@ def create_parser():
 
     )
     return parser  
+
+
+def main():
+    import boto3
+    from backupdb import pgdump, storage
+
+    args = create_parser().parse_args()
+    dump = pgdump.dump(args.url)
+    if args.driver == 's3':
+        client = boto3.client('s3')
+        # TODO: create a better 'name' based on the database name and date
+        storage.s3(client, dump.stdout, args.destination, 'mybackupdb.sql')
+        print("Backup successful!")
+    else:
+        with open(args.destination, 'wb') as outfile:
+            storage.local(dump.stdout, outfile)
+            print("Backup Successful!")

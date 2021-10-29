@@ -10,3 +10,7 @@ boto3 = "*"
 
 [requires]
 python_version = "3.9"
+
+[packages.e1839a8]
+path = "."
+editable = true
