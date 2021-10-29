@@ -14,6 +14,7 @@ You will pass in the following on the command line:
 ```bash
 $ pip install -i https://test.pypi.org/simple/ backupdb
 ```
+
 ## Syntax
 
 ```bash
@@ -42,5 +43,5 @@ Follow these steps to start developing with this project:
 1. Ensure `pip` and `pipenv` are installed
 2. Clone repository: `git clone git@github.com:sharhan-alhassan/backupdb`
 3. `cd` into the repository
-4. Activate virtualenv: `pipenv shell`
-5. Install dependencies: `pipenv install`
+4. Activate virtualenv `source /venv/bin/activate`
+5. Install dependencies: `pip install -e .` or `pip install -r requirements` 
