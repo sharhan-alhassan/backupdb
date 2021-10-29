@@ -15,6 +15,16 @@ def dump(url):
         sys.exit(1)
 
 
+def dump_filename(url, timestamp=None):
+    db_name = url.split('/')[-1]
+    db_name = db_name.split('?')[0]
+    if timestamp:
+        return f"{db_name}-{timestamp}.sql"
+    else:
+        return f"{db_name}.sql"
+
+        
+
     """(pgbackup) $ PYTHONPATH=./src python
     >>> from pgbackup import pgdump
     >>> dump = pgdump.dump('postgres://postgres:password@54.245.63.9:80/

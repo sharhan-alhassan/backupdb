@@ -15,6 +15,11 @@ setup (
     packages=find_packages('src'),
     package_dir={'': 'src'},
     install_requires=['boto3'],
+    python_requires='>=3.9',
+    classifiers=[
+        "Programming Language :: Python :: 3.9",
+        "License :: OSI Approved :: MIT License",
+    ],
     entry_points={
         'console_scripts': [
             'backupdb=backupdb.cli:main',
