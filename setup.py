@@ -7,7 +7,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup (
     name='backupdb',
-    version='0.0.2',
+    version='0.0.3',
     author='Sharhan Alhassan',
     author_email='sharhanalhassan@gmail.com',
     description='A simple CLI utility for backing up PostgreSQL databases.',
