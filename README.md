@@ -10,7 +10,10 @@ You will pass in the following on the command line:
 - The `storage driver (S3 or Local)`
 - The `destination (S3 bucket or local path)`
 
-
+## Installation
+```bash
+$ pip install -i https://test.pypi.org/simple/ backupdb
+```
 ## Syntax
 
 ```bash
