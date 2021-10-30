@@ -1,7 +1,7 @@
 backupdb
 =========
 
-An open-source CLI tool for backing up RDS(PostgreSQL) Locally or to Amazon S3 bucket
+An open-source CLI tool for backing up PostgreSQL database Locally or to Amazon S3 bucket
 
 ## Usage 
 You will pass in the following on the command line:
