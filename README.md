@@ -1,7 +1,7 @@
 backupdb
 =========
 
-An open-source CLI tool for backing up RDS Locally or to Amazon S3 bucket
+An open-source CLI tool for backing up RDS(PostgreSQL) Locally or to Amazon S3 bucket
 
 ## Usage 
 You will pass in the following on the command line:
@@ -12,7 +12,7 @@ You will pass in the following on the command line:
 
 ## Installation
 ```bash
-$ pip install -i https://test.pypi.org/simple/ backupdb
+$ pip install backupdb
 ```
 
 ## Syntax
@@ -28,7 +28,7 @@ $ backupdb postgres://[USERNAME]:[PASSWORD]@[SERVER_IP:80/<db_name> --driver s3 
 
 ## Example usage for Local backup
 ```bash
-$ backupdb postgres://[USERNAME]:[PASSWORD]@[SERVER_IP:80/<db_name> --driver local /var/local/db/backups
+$ backupdb postgres://[USERNAME]:[PASSWORD]@[SERVER_IP:80/<db_name> --driver local /var/local/mybackup.sql
 ```
 
 ## Installation From Source
